@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Headings</title>
+    <link rel="stylesheet" href="../src/output.css" />
+</head>
+<body class="text-white bg-gray-900">
+    <header>
+        <a class="absolute flex items-center justify-center w-20 h-20 bg-accent rtop-4 left-4" href="../index.html">Accueil</a>
+        <h1 class="pt-20 pb-10 font-medium text-center text-white text-4xl">Headings</h1>
+        <hr class="m-auto w-80 bg-brand-typo h-1 border-none" />
+    </header>
+    <main>
+        <!-- à partir de 1024, tu passes en col -->
+        <div class="flex gap-4 flex-col min-[1024px]:flex-row">
+            <!-- Démo des Fonts -->
+            <div class="container mx-auto border-1 border-gray-500 rounded-xl p-10">
+                <h2 class="py-5 text-3xl text-gray-50">Echelle typographique</h2>
+                <hr class="w-80 bg-brand-darker-typo h-1 border-none" />
+                <h3 class="pt-10 pb-5 text-xl text-gray-50">Les tailles Tailwind : body</h2>
+                    <p class="text-xs">Lorem - text-xs : 12px.</p>
+                    <p class="text-sm">Lorem - text-sm : 14px.</p>
+                    <p class="text-base">Lorem - text-base : 16px.</p>
+                    <p class="text-lg">Lorem - text-lg : 18px.</p>
+                    <p class="text-xl">Lorem - text-xl : 20px.</p>
+                    <p class="text-2xl">Lorem - text-2xl : 24px.</p>
+                    <p class="text-3xl">Lorem - text-3xl : 30px.</p>
+                    <p class="text-4xl">Lorem - text-4xl : 36px.</p>
+                    <p class="text-5xl">Lorem - text-5xl : 48px.</p>
+                    <p class="text-6xl">Lorem - text-6xl : 60px.</p>
+                    <p class="text-7xl">Lorem - text-7xl : 72px.</p>
+                    <p class="text-8xl">Lorem - text-8xl : 96px.</p>
+                    <p class="text-9xl">Lorem - text-9xl 128px.</p>
+            </div>
+        </div><!-- fin Démo global -->
+    </main>
+    <footer class="p-6 mt-6 border border-t-accent">
+        <div class="w-25 p-4 animate-fadeIn">
+            <a href="https://tailwindcss.com/" target="_blank"><img src="../img/tailwindcss-mark.d52e9897.svg" alt="logo Tailwind"></a>
+        </div>
+    </footer>
+</body>
+</html>

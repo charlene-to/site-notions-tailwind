@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid</title>
+    <link rel="stylesheet" href="../src/output.css" />
+  </head>
+  <body class="text-white bg-gray-900">
+    <header>
+        <a class="absolute flex items-center justify-center w-20 h-20 bg-accent rtop-4 left-4" href="../index.html">Accueil</a>
+        <h1 class="pt-20 pb-10 font-medium text-center text-white text-4xl">Grid</h1>
+        
+        <div class="w-80 mx-auto bg-brand-grid h-4 shadow-xl shadow-amber-50/50"></div> </header>
+
+    <main>
+        <!-- à partir de 1024, tu passes en col -->
+        <div class="flex gap-4 flex-col min-[1024px]:flex-row">
+            <div class="container mx-auto pb-60 border-1 border-gray-500 rounded-xl p-10">
+                <h2 class="pt-10 pb-5 text-4xl text-gray-50">1-Grid</h2>
+        <div class="w-80  bg-brand-grid h-4 shadow-xl shadow-amber-50/50"></div>
+
+
+
+      <!-- Initialisation : grid / inline-grid -->
+
+      <!-- Grid Template Columns : grid-cols-1 / 2 / 3 / 4 / 5 / 6 / etc... / grid-cols-none -->
+      <!-- Cela donne : grid-template-columns: repeat(1, minmax(0, 1fr)); -->
+      <!-- Grid Template Rows : grid-rows-1 / 2 / 3 / 4 / 5 / 6 / etc... / grid-rows-none -->
+      <!-- Cela donne : grid-template-rows: repeat(1, minmax(0, 1fr)); -->
+
+      <!-- Grid Column Start / End : col-span-4 / col-span-full / col-start-6 / col-end-6 -->
+      <!-- Grid Row Start / End : row-span-4 / row-span-full / row-start-6 / row-end-6 -->
+
+      <!-- Gap : 
+        gap-0 / 0.5 / 1 / 1.5 
+        gap-x-0 / gap-x-0.5
+        gap-y-0 / gap-y-0.5
+  
+          <div class="p-1 bg-gray-200  h-96">
+        <div class="w-full bg-cyan-400 "></div>
+        <div class="w-full bg-cyan-600 "></div>
+      </div>  -->
+
+
+     </div><!-- Fermeture du flex col -->
+    </main>
+    <footer class="p-6 mt-6 border border-t-accent">
+        <div class="w-25 p-4 animate-fadeIn">
+            <a href="https://tailwindcss.com/" target="_blank"><img src="../img/tailwindcss-mark.d52e9897.svg" alt="logo Tailwind"></a>
+        </div>
+    </footer>
+  </body>
+</html>

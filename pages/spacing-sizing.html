@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espacement</title>
+    <link rel="stylesheet" href="../src/output.css" />
+</head>
+<body class="text-white bg-gray-900">
+    <header>
+        <a class="absolute flex items-center justify-center w-20 h-20 bg-accent rtop-4 left-4" href="../index.html">Accueil</a>
+        <h1 class="pt-20 pb-10 font-medium text-center text-white text-4xl">Espacement</h1>
+        <hr class="m-auto w-80 bg-brand-size h-1 border-none" />
+    </header>
+    <main>
+        <!-- à partir de 1024, tu passes en col -->
+        <div class="flex gap-4 flex-col min-[1024px]:flex-row">
+            <div class="container mx-auto pb-20 border-1 border-gray-500 rounded-xl p-10">
+                <h2 class="pt-10 pb-5 text-3xl text-gray-50">1-De 0 à 96</h2>
+                <hr class="w-80 bg-brand-darker-size h-1 border-none" />
+                <!-- démo  -->
+                <h3 class="pt-10 pb-5 text-xl text-gray-50">Distance, taille, emplacement</h3>
+                <p> La plage numérique de 0 à 96 (et au-delà) correspond à l'Échelle d'espacement et de dimensionnement de Tailwind.
+                </p>
+                <p>Les valeurs de 1 à 96 suivent une progression qui est très régulière, basée sur un système de grille de 4 pixels.</p>
+                <ul class="list-disc list-inside pt-5">
+                    <li>Chaque unité Tailwind (de 1 à 16) représente 4px</li>
+                    <li>1 = 4px, 4 = 16px, 10 = 40px, etc.
+                    </li>
+                    <li>La valeur 96 (la plus grande de l'échelle standard) est égale à 96×4px=384px (ou 24rem)</li>
+                </ul>
+                <ul class="list-disc list-inside pt-5">
+                    <li>Quand vous écrivez p-5 dans Tailwind CSS, cela ne correspond pas à 5 pixels</li>
+                    <li>p-5 correspond à 20 pixels.</li>
+                    <li>p-1 => 4px</li>
+                    <li>p-2 => 8px</li>
+                    <li>p-20 => 80px</li>
+                </ul>
+                <ol class="list-decimal list-inside pt-5">
+                    <li>Espacement (Spacing) : p, m, space-x, space-y, gap </li>
+                    <li>Dimensionnement (Sizing) : width, height, min-w-, max-w- etc</li>
+                    <li>Positionnement : top, bottom, left, right.</li>
+                </ol>
+                <ul class="list-disc list-inside pt-5">
+                    <li>ex : top-12 = 48 pixels (et 3rem en css)</li>
+                    <li>Le calcul est : 12 unités × 4px = 48px.</li>
+                </ul>
+            </div>
+            <div class="container mx-auto pb-20 border-1 border-gray-500 rounded-xl p-10">
+                <h2 class="pt-10 pb-5 text-3xl text-gray-50">2-Padding</h2>
+                <hr class="w-80 bg-brand-darker-size h-1 border-none" />
+                <!-- démo padding -->
+                <h3 class="pt-10 pb-5 text-xl text-gray-50">Quelques exemples</h3>
+                <div class="pb-5">
+                    <p class="text-base font-thin">Tailles : p-0 à p-96</p>
+                    <p class="text-base font-thin">positionnements : pt / pb / pr / pl</p>
+                    <p class="text-base font-thin">H/B : py - D/G : px </p>
+                </div>
+                <div class="flex gap-4 text-base font-medium flex-wrap">
+                    <p class="bg-brand-size p-10">padding 10 : p-10</p>
+                    <p class="bg-brand-size py-10">padding Y : haut et bas</p>
+                    <p class="bg-brand-size px-10">padding X : droite et gauche</p>
+                    <p class="bg-brand-size pt-5">padding-top de 5 : pt-5 </p>
+                    <p class="bg-brand-size pl-5">padding-left de 5 : pl-5 </p>
+                </div>
+                <h2 class="pt-10 pb-5 text-3xl text-gray-50">3-Margin</h2>
+                <hr class="w-80 bg-brand-darker-size h-1 border-none" />
+                <!-- démo margin -->
+                <h3 class="pt-10 pb-5 text-xl text-gray-50">Quelques exemples</h3>
+                <div class="pb-5">
+                    <p class="text-base font-thin">Tailles :m-0 / m-96</p>
+                    <p class="text-base font-thin">positionnements : mt / mb / mr / ml</p>
+                    <p class="text-base font-thin">H/B : my - D/G : mx </p>
+                </div>
+                <div class="flex gap-4 ctext-base font-medium flex-wrap">
+                    <div class="border-accent border-1">
+                        <p class="bg-brand-darker-size m-10">margin 10 : m-10</p>
+                    </div>
+                    <div class="border-accent border-1">
+                        <p class="bg-brand-darker-size my-10">margin Y : haut et bas</p>
+                    </div>
+                    <div class="border-accent border-1">
+                        <p class="bg-brand-darker-size mx-10">margin X : droite et gauche</p>
+                    </div>
+                    <div class="border-accent border-1">
+                        <p class="bg-brand-darker-size mt-5">margin-top de 5 : mt-5 </p>
+                    </div>
+                    <div class="border-accent border-1">
+                        <p class="bg-brand-darker-size pml-5">margin-left de 5 : ml-5 </p>
+                    </div>
+                </div>
+                <h2 class="pt-10 pb-5 text-3xl text-gray-50">4-Space-x -y</h2>
+                <hr class="w-80 bg-brand-darker-size h-1 border-none" />
+                <p class="mt-5 text-base font-thin"> La différence principale avec padding et margin, l'espace est appliqué entre les boîtes.
+                <h3 class="pt-10 pb-5 text-xl text-gray-50">Sapce-x</h3>
+                <hr class="w-80 border-brand-darker-size h-1 border-dashed" />
+                <p class="py-5 text-base font-thin"> La classe space-x- est une utilité Flexbox/Grid qui ajoute de l'espace uniquement entre les éléments enfants, sans affecter le premier ou le dernier. <br>
+                    ci-dessous : space-x-6
+                </p>
+                <div class="flex space-x-6 text-base border-1 border-accent">
+                    <p class="bg-brand-size p-4">item 1</p>
+                    <p class="bg-brand-size p-4">item 2</p>
+                    <p class="bg-brand-size p-4">item 3</p>
+                    <p class="bg-brand-size p-4">item 4</p>
+                    <p class="bg-brand-size p-4">item 5</p>
+                </div>
+                <h3 class="pt-10 pb-5 text-xl text-gray-50">Sapce-y</h3>
+                <hr class="w-80 border-brand-darker-size h-1 border-dashed" />
+                <p class="py-5 text-base font-thin"> La classe space-y- est ajoute de l'espace verticalement<br>
+                    ci-dessous : space-y-6 // ajouter flex-col et item-start
+                </p>
+                <div class="flex flex-col item-start space-y-6 text-base border-1 border-accent">
+                    <p class="bg-brand-size p-4">item 1</p>
+                    <p class="bg-brand-size p-4">item 2</p>
+                    <p class="bg-brand-size p-4">item 3</p>
+                </div>
+                <h3 class="pt-10 pb-5 text-xl text-gray-50">!! Space-x et -y pour du rwd !!</h3>
+                <hr class="w-80 border-brand-size h-1 border-dashed" />
+                <p class="py-5 text-base font-thin">On veut de l'espace horizontal en row, et vertical sur petit écran (en col)<br>
+                    ci-dessous : space-x-6 ET min-[768px]:space-y-6 (à partir de md, tu te mets en rangé) // <br> <br> attention, mid-md n'existe pas ! Le préfixe standard est md: (qui signifie déjà min-width: 768px, à partir de 768px)
+                </p>
+                <div class="flex flex-col item-start space-y-6 md:flex-row md:space-y-0 md:space-x-6 text-base border-1 border-accent">
+                    <p class="bg-brand-darker-size p-4 border-amber-400">item 1</p>
+                    <p class="bg-brand-darker-size p-4">item 2</p>
+                    <p class="bg-brand-darker-size p-4">item 3</p>
+                    <p class="bg-brand-darker-size p-4">item 4</p>
+                    <p class="bg-brand-darker-size p-4">item 5</p>
+                </div>
+            </div>
+        </div><!-- fin de la div flex globale -->
+    </main>
+    <footer class="p-6 mt-6 border border-t-accent">
+        <div class="w-25 p-4 animate-fadeIn">
+            <a href="https://tailwindcss.com/" target="_blank"><img src="../img/tailwindcss-mark.d52e9897.svg" alt="logo Tailwind"></a>
+        </div>
+    </footer>
+</body>
+</body>
+</html>

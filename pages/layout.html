@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mise en page</title>
+    <link rel="stylesheet" href="../src/output.css" />
+</head>
+<body class="text-white bg-gray-900">
+    <header>
+        <a class="absolute flex items-center justify-center w-20 h-20 bg-accent rtop-4 left-4" href="../index.html">Accueil</a>
+        <h1 class="pt-20 pb-10 font-medium text-center text-white text-4xl">Mise en page</h1>
+        <hr class="m-auto w-80 bg-brand-layout h-1 border-none" />
+    </header>
+    <main>
+        <!-- à partir de 1024, tu passes en col -->
+        <div class="flex gap-4 flex-col min-[1024px]:flex-row">
+            <!-- 1-Démo des positionnements du texte -->
+            <div class="container w-full lg:w-1/3 mx-auto border-1 border-gray-500 rounded-xl p-10">
+                <h2 class="py-5 text-3xl text-gray-50">1-Position des médias</h2>
+                <hr class="w-80 bg-brand-darker-layout h-1 border-none" />
+                <h3 class="pt-10 pb-5 text-xl text-gray-50">Alignement du texte</h3>
+                <!-- text-left top... -->
+                <div class="flex p-4 mb-10">
+                    <div class="w-1/2 h-10 border-1 border-brand-layout text-left">
+                        <p>left</p>
+                    </div>
+                    <div class="w-1/2 h-10 border-1 border-brand-layout text-center">
+                        <p>center</p>
+                    </div>
+                    <div class="w-1/2 h-10 border-1 border-brand-layout text-right">
+                        <p>right</p>
+                    </div>
+                </div>
+                <div class="w-auto p-4 border-x-1 border-brand-layout h-auto text-justify text-sm">justify - Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor.</div>
+                <h3 class="pt-10 pb-5 text-xl text-gray-50">Position d'un bloc</h3>
+                <hr class="w-80 bg-brand-darker-layout h-1 border-none" />
+                <!-- static / fixed / absolute / relative /  -->
+                <!-- top / bottom / left / right -->
+                <!-- Si on veut du négatif, on met un "-" devant la classe -->
+                <!-- -Fixed : positionné par rapport à la fenêtre du navigateur. idéal pour : btn back to top ou menu -->
+                <!-- -Sticky :elle est relative par défaut, mais elle devient fixed uniquement quand l'utilisateur fait défiler la page jusqu'à un certain seuil.  -->
+                <!-- -Pour que sticky s'active, vous devez lui dire à quelle distance du bord de l'écran il doit s'accrocher.
+Vous devez ajouter une classe de positionnement comme top-0 (s'accrocher en haut), bottom-0 (s'accrocher en bas), etc.  -->
+                <div class="w-32 h-32 mt-5 bg-brand-darker-layout fixed">fixed</div>
+                <div class="w-32 h-32 mt-5 bg-brand-layout sticky top-0"> sticky en haut à gauche</div>
+                <div class="w-32 h-auto mt-5 bg-brand-darker-layout"> h-auto s'adapte parfaitement au contenu</div>
+                <h3 class="pt-10 pb-5 text-xl text-gray-50">Nouveauté</h3>
+                <hr class="w-80 bg-brand-darker-layout h-1 border-none" />
+                <p class="py-5 font-body-primary text-base font-light"> Au lieu d'écrire : class="w-40 h-40 => size-40</p>
+            </div>
+            <!-- 2- Démo des containers -->
+            <div class="container w-full lg:w-1/3 mx-auto border-1 border-gray-500 rounded-xl p-10">
+                <h2 class="py-5 text-3xl text-gray-50">2-Visibilité</h2>
+                <hr class="w-80 bg-brand-darker-layout h-1 border-none" />
+                <p class="py-5">Les tailles à connaître</p>
+                <ul class="text-base font-thin list-disc">
+                    <li>ex : width 50 : w-50</li>
+                    <li class="italic">Rappel : 50 correspond à 200px</li>
+                    <li>centrage automatique : w-auto</li>
+                    <li>moitié du parent : w-1/2, w-1/3 (tiers) etc</li>
+                    <li>w-full : 100% de son conteneur parent (width: 100%) </li>
+                    <li>w-screen, h-screen : 100% de la largeur/hauteur de l'écran (viewport) (width: 100vw) </li>
+                    <li>min-w-0 : Définit la largeur minimale à 0 (souvent utilisé pour permettre à un élément de se réduire au maximum )</li>
+                    <li><a href="custom.html" class="hover:text-accent underline"> Aller dans personnalisation pour en savoir plus </a></li>
+                </ul>
+                <p class="py-5">Les contraintes : jusqu'à une certaine taille</p>
+                <ul class="text-base font-thin">
+                    <li>sm (640px) max-width: 640px;</li>
+                    <li>md (768px) max-width: 768px;</li>
+                    <li>lg (1024px) max-width: 1024px;</li>
+                    <li>xl (1280px) max-width: 1280px;</li>
+                    <li>2xl (1536px) max-width: 1536px;</li>
+                </ul>
+                <h2 class="pt-10 pb-5 text-4xl text-gray-50">Overflow</h2>
+                <p>Définir ce qui arrive au contenu lorsque celui-ci est plus grand que son conteneur</p>
+                <!-- 
+                overflow-auto  : contenu est dans une boîte à défilement automatique, les barres de défilement apparaissent si nécessaire.
+                 hidden  : cache axe X et Y
+                 visible : Le contenu débordant s'affiche au-delà des limites du conteneur.
+                 scroll : Ajoute toujours une barre de défilement, même si le contenu ne déborde pas, donc pas toujours nécessaire.
+                x-hidden, y-hidden : Le contenu débordant est coupé et masqué sur l'axe horizontal (X) ou sur l'axe vertical (Y) 
+                 -->
+                <div class="flex gap-4">
+                    <div class="relative w-32 h-32 bg-cyan-600 ">
+                        <div class="w-20 h-20 bg-white opacity-40 overflow-auto">Hello</div>
+                    </div>
+                    <div class="relative w-32 h-32 bg-cyan-600 ">
+                        <div class="w-20 h-20 bg-white hidden"></div>
+                    </div>
+                </div>
+                <h2 class="pt-10 pb-5 text-3xl text-gray-50">Z-Index</h2>
+                <!-- z-0 / 10 / 20 / 30 / auto -->
+                <!-- visible / invisible -->
+                <div class="relative w-32 h-32 bg-blue-400 ">
+                    <div class="absolute w-20 h-20 bg-red-400"></div>
+                    <div class="absolute w-20 h-20 bg-white"></div>
+                </div>
+            </div>
+            <!-- 3démo block inline-block inline etc -->
+            <div class="container w-full lg:w-1/3 mx-auto border-1 border-gray-500 rounded-xl p-10">
+                <h2 class="py-5 text-3xl text-gray-50">3-Display</h2>
+                <hr class="w-80 bg-brand-darker-layout h-1 border-none" />
+                <!-- flex inline-flex -->
+                <!-- grid inline-grid -->
+                <!-- contents / hidden(none) -->
+                <!-- table / caption / cell / column / row etc -->
+                <p>Lorem ipsum dolor sit amet.</p>
+                <div class="w-10 h-10 bg-blue-400"></div>
+                <h2 class="pt-10 pb-5 text-3xl text-gray-50">4- Box Sizing/Floats/Clear</h2>
+                <hr class="w-80 bg-brand-darker-layout h-1 border-none" />
+                <!-- box-border / content -->
+                <!-- float-right / left / none -->
+                <h2 class="pt-10 pb-5 text-3xl text-gray-50">4-Object-fit / position Image</h2>
+                <hr class="w-80 bg-brand-darker-layout h-1 border-none" />
+                <p class="py-5 font-body-primary text-base font-light">Différence avec background-image qui est une pure décoration et ignoré pour le référencement</p>
+                <ul class="text-base font-thin list-disc mb-10">
+                    <li>Accessible aux lecteurs d'écran (via la balise alt)</li>
+                    <li>L'image est scannée comme un contenu essentiel (l'image est là pour l'information)</li>
+                </ul>
+                <p class="py-5 font-body-primary text-base font-light">Ses valeurs</p>
+                <ul class="text-base font-thin list-disc mb-10">
+                    <li>étendue dans le conteneur : object-cover / contain / fill / none </li>
+                    <li>centre la partie de ma photo : object-bottom / center / left / right / left-bottom / right-top</li>
+                </ul>
+                <div class="flex flex-col gap-4 wrap">
+                    <img src="../img/nature-lg.jpg" class="block w-50 h-auto ">
+                    <p class="pt-5 font-body-primary text-base font-light">object-cover : <br>l'image est coupée sur les bords (soit en haut/bas, soit à gauche/droite) pour s'assurer qu'il n'y ait pas d'espace vide.</p>
+                    <div class="w-100 h-50 bg-gray-700 border-1 border-accent">
+                        <img src="../img/nature-lg.jpg" class="block  object-cover">
+                    </div>
+                    <p class="pt-5 font-body-primary text-base font-light">object-contain :<br> laissera des bandes d'espace vide si l'img est trop petite</p>
+                    <div class="w-auto h-auto bg-gray-700 border-1 border-accent">
+                        <img src="../img/pattern-alicebroderie.jpg" class="block object-contain mx-auto">
+                    </div>
+                    <p class="pt-5 font-body-primary text-base font-light"> ATTENTION : pour les exemples suivants : w-full h-full :<br> Pour que l'image respecte les dimensions de la div parente</p>
+                    <div class="w-150 h-26 bg-gray-700 border-1 border-accent">
+                        <img src="../img/nature-lg.jpg" class="w-full h-full block object-cover object-center">
+                    </div>
+                    <p class="pt-5 font-body-primary text-base font-light">object-top :<br>le haut doit rester visible</p>
+                    <div class="w-150 h-26 bg-gray-700 border-1 border-accent ">
+                        <img src="../img/nature-lg.jpg" class="w-full h-full block object-cover object-top">
+                    </div>
+                    <p class="pt-5 font-body-primary text-base font-light">object-bottom :<br>le bas doit rester visible</p>
+                    <div class="w-150 h-26 bg-gray-700 border-1 border-accent">
+                        <img src="../img/nature-lg.jpg" class="w-full h-full block object-cover object-bottom">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="p-6 mt-6 border border-t-accent">
+        <div class="w-25 p-4 animate-fadeIn">
+            <a href="https://tailwindcss.com/" target="_blank"><img src="../img/tailwindcss-mark.d52e9897.svg" alt="logo Tailwind"></a>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,66 @@
+/* src/input.css (Correction pour Tailwind CSS v4) */
+
+@import "tailwindcss";
+/* Typo */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+
+@theme {
+      --color-surface-primary : #1F2729; 
+      --color-accent : #64D297;
+      
+     /* Palette Menu */ 
+     --color-brand-bkg : #FFCB77;
+     --color-brand-darker-bkg : #ee964b;
+     --color-brand-typo : #FE6D73 ;
+     --color-brand-darker-typo : #ff595e;
+     --color-brand-size : #17C3B2 ;
+     --color-brand-darker-size : #588b8b;
+     --color-brand-layout : #62b6cb ;
+     --color-brand-darker-layout : #457b9d  ;
+     --color-brand-flexbox : #227C9D;
+     --color-brand-darker-flexbox :#014f86 ;
+     --color-brand-grid : #1d2d44;
+     --color-brand-darker-grid : #101828;
+     --color-brand-custom : #3d348b;
+     --color-brand-darker-custom : #3c096c;
+     --color-brand-animation : #7678ed;
+     --color-brand-darker-animation : #6a4c93;
+
+      /* Dégradé personnalisé à partir du menu */
+    --bg-gradient-brand-bkg: linear-gradient(0deg, #FFCB77 0%, #FDBB2D 100%);
+
+     /* Palette Menu */ 
+    --font-body-primary: "Roboto", sans-serif;
+      --font-body-secondary: "Oswald", sans-serif; 
+
+    /* Définition des utilitaires d'animation */
+    --animate-wiggle: wiggle 1s ease-in-out infinite;
+    --animate-grow: grow 1s ease-in-out infinite;
+    --animate-fadeIn: fadeIn 1s linear forwards;
+    --animate-fadeInS: fadeIn 3s linear forwards;
+    --animate-fadeInSs: fadeIn 5s linear forwards;
+    --animate-fadeOut: fadeOut 10s linear forwards;
+
+    /* Définition des keyframes (syntaxe CSS standard) */
+    @keyframes wiggle {
+        0%, 100% { transform: rotate(-3deg); }
+        50% { transform: rotate(3deg); }
+    }
+
+    @keyframes grow {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+    }
+
+    @keyframes fadeIn {
+        0%, 70% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+
+    @keyframes fadeOut {
+        0%, 70% { opacity: 1; }
+        100% { opacity: 0; }
+    }
+}

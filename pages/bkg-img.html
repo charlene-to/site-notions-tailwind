@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Backgroudn image</title>
+    <link rel="stylesheet" href="../src/output.css" />
+</head>
+<body class="text-white bg-gray-900">
+    <header>
+        <div class="flex gap-4">
+            <a class="flex items-center justify-center w-20 h-20 bg-accent rtop-4 left-4" href="../index.html">Accueil</a>
+            <a class="inline-block p-6 items-center justify-center h-20 bg-brand-bkg rtop-4 left-4" href="background.html">Background</a>
+        </div>
+        <h1 class="pt-20 pb-10 font-medium text-center text-white text-4xl">Background Image</h1>
+        <hr class="m-auto w-80 bg-brand-darker-bkg h-1 border-none" />
+    </header>
+    <!-- Contenu de la leçon -->
+    <div class="container mx-auto py-25 border-1 border-gray-500 rounded-xl p-10">
+        <div class="flex gap-4 mb-25">
+            <!-- Image de fond -->
+            <p>Background Fixed</p>
+            <div class="w-1/2 h-40 bg-[url('../img/nature-lg.jpg')] bg-cover bg-no-repeat bg-fixed bg-right"></div>
+            <div class="w-1/2 h-40 bg-[url('../img/nature-lg.jpg')] bg-contain bg-no-repeat bg-fixed bg-top"></div>
+            <div class="w-1/2 h-40 bg-[url('../img/nature-lg.jpg')] bg-cover bg-repeat bg-fixed bg-top"></div>
+            <div class="w-1/2 h-40 bg-[url('../img/nature-lg.jpg')] bg-cover bg-no-repeat bg-fixed bg-bottom"></div>
+        </div>
+        <div class="flex gap-4 mb-25">
+            <!-- POSITION : bg-bottom / center / left / right / top / right-bottom / left-top -->
+            <p>Background position</p>
+            <div class="w-1/2 h-40 bg-[url('../img/nature-lg.jpg')] bg-cover bg-right"></div>
+            <div class="w-1/2 h-40 bg-[url('../img/nature-lg.jpg')] bg-cover bg-bottom"></div>
+            <div class="w-1/2 h-40 bg-[url('../img/nature-lg.jpg')] bg-cover bg-left"></div>
+            <div class="w-1/2 h-40 bg-[url('../img/nature-lg.jpg')] bg-cover bg-top"></div>
+        </div>
+        <div class="flex gap-4  mb-25">
+            <p>Background image à positionner</p>
+            <div class="bg-[url('../img/nature-lg.jpg')] w-50 h-screen"></div>
+            <div class="h-40 bg-[url('../img/nature-lg.jpg')] w-full bg-bottom"></div>
+            <div class="h-40 w-full bg-[url('../img/nature-lg.jpg')] bg-cover bg-center"></div>
+            <div class="h-40 w-full bg-[url('../img/nature-lg.jpg')] bg-contain bg-no-repeat bg-center"></div>
+        </div>
+        <div class="flex mb-25">
+            <div class="bg-[url('../img/nature-lg.jpg')] w-full h-screen bg-cover bg-center"></div>
+        </div>
+        <div class="flex flex-col gap-4 mb-25">
+            <div class="bg-[url('../img/alicebroderie.jpg')] w-full h-screen bg-repeat bg-center"></div>
+        </div>
+        <div class="flex gap-4 mb-25">
+            <div class="w-1/2 h-50 bg-[url('../img/motif-repeat.png')] bg-repeat bg-contain"></div>
+            <div class="w-1/2 h-50 bg-[url('../img/icon-motif-repeat.png')] bg-repeat bg-center"></div>
+        </div>
+        <div class="flex gap-4 mb-25">
+            <div class="w-1/2 h-auto bg-[url('../img/alicebroderie.jpg')] bg-repeat bg-cover bg-center">
+                <p class="bg-gradient-to-r from-pink-400/55 to-pink-100">Hello pattern</p>
+            </div>
+            <div class="w-1/2 h-50 bg-[url('../img/pattern-alicebroderie.jpg')] bg-repeat bg-center"></div>
+        </div>
+    </div>
+</body>
+</html>

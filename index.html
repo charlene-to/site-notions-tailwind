@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accueil Site Cours</title>
+    <link rel="stylesheet" href="src/output.css" />
+</head>
+<body class="bg-surface-primary">
+    <header class="p-6 mt-6 flex border border-t-accent">
+        <p class="text-md p-4 font-medium text-white animate-fadeIn flex gap-2  bg-blue-300 rounded">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m15 15 6-6m0 0-6-6m6 6H9a6 6 0 0 0 0 12h3" />
+            </svg>
+            <a class="items-center justify-center  top-4 left-4" href="https://tailwindcss.com/" target="_blank">Site Tailwind</a>
+        </p>
+    </header>
+    <div class="p-15">
+        <h1 class="font-body-primary pt-4 text-4xl text-center text-gray-50 animate-fadeIn">
+            Thématiques courantes de Tailwind CSS
+        </h1>
+        <div class="font-body-secondary pt-4 pb-10 mx-5 text-xl text-center text-gray-50 animate-fadeInS">
+            <p>Les notions vues en cours</p>
+        </div>
+        <hr class="m-auto w-80 bg-accent h-1 border-none" />
+    </div>
+    <div class="container flex flex-wrap justify-center mx-auto mb-50">
+        <a href="./pages/background.html" target="_blank">
+            <div class="flex items-center justify-center m-4 bg-brand-bkg hover:bg-brand-darker-bkg transition-colors duration-300 cursor-pointer w-60 h-30">
+                <!-- Coloriser et effets -->
+                <h2 class="text-md font-light text-center text-white">
+                    Background, Bordures et Effets
+                </h2>
+            </div>
+        </a>
+        <a href="./pages/typography.html" target="_blank">
+            <div class="flex items-center justify-center m-4 bg-brand-typo hover:bg-brand-darker-typo transition-colors duration-300 cursor-pointer w-60 h-30">
+                <!-- Le choix des polices -->
+                <h2 class="text-md font-light text-center text-white">
+                    Typographie
+                </h2>
+            </div>
+        </a>
+        <a href="./pages/spacing-sizing.html" target="_blank">
+            <div class="flex items-center justify-center m-4 bg-brand-size hover:bg-brand-darker-size transition-colors duration-300 cursor-pointer w-60 h-30">
+                <!-- Les espacements -->
+                <h2 class="text-md font-light text-center text-white">Espacement</h2>
+            </div>
+        </a>
+        <a href="./pages/layout.html" target="_blank">
+            <div class="flex items-center justify-center m-4 bg-brand-layout hover:bg-brand-darker-layout transition-colors duration-300 cursor-pointer w-60 h-30">
+                <!-- Disposer son contenu -->
+                <h2 class="text-md font-light text-center text-white">
+                    Mise en page
+                </h2>
+            </div>
+        </a>
+        <a href="./pages/flexbox.html" target="_blank">
+            <div class="flex items-center justify-center m-4 bg-brand-flexbox hover:bg-brand-darker-flexbox transition-colors duration-300 cursor-pointer w-60 h-30">
+                <h2 class="text-md font-light text-center text-white">Flexbox</h2>
+            </div>
+        </a>
+        <a href="./pages/grid.html" target="_blank">
+            <div class="flex items-center justify-center m-4 bg-brand-grid hover:bg-brand-darker-grid transition-colors duration-300 cursor-pointer w-60 h-30">
+                <h2 class="text-md font-light text-center text-white">Grid</h2>
+            </div>
+        </a>
+        <a href="./pages/custometrwd.html" target="_blank">
+            <div class="flex items-center justify-center m-4 bg-brand-custom hover:bg-brand-darker-custom transition-colors duration-300 cursor-pointer w-60 h-30">
+                <h2 class="text-md font-light text-center text-white">
+                    Personnalisation et RWD
+                </h2>
+            </div>
+        </a>
+        <a href="./pages/transitions.html" target="_blank">
+            <div class="flex items-center justify-center m-4 bg-brand-animation hover:bg-brand-darker-animation transition-colors duration-300 cursor-pointer w-60 h-30">
+                <h2 class="text-md font-light text-center text-white">
+                    Animation et Transition
+                </h2>
+            </div>
+        </a>
+    </div>
+    <footer class="p-6 mt-6 border border-t-accent">
+        <div class="w-25 p-4 animate-fadeIn">
+            <a href="https://tailwindcss.com/" target="_blank"><img src="img/tailwindcss-mark.d52e9897.svg" alt="logo Tailwind"></a>
+        </div>
+    </footer>
+</body>
+</html>
