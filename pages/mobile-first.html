@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mobile First</title>
+    <link rel="stylesheet" href="../src/output.css" />
+</head>
+<body class="text-white bg-gray-900">
+    <header>
+        <a class="absolute flex items-center justify-center w-20 h-20 bg-accent rtop-4 left-4" href="../index.html">Accueil</a>
+        <h1 class="pt-20 pb-10 font-medium text-center text-white text-4xl">Mobile First</h1>
+        <hr class="m-auto w-80 bg-brand-mobileF h-1 border-none" />
+    </header>
+    <main>
+        <!-- à partir de 1024, tu passes en col -->
+        <div class="flex gap-4 flex-col min-[1024px]:flex-row">
+           
+            <!--  @Stratégie mobile first -->
+            <div class="container mx-auto pb-20 border-1 border-gray-500 rounded-xl p-10">
+                 <h2 class="pb-5 text-3xl text-gray-50">2-Stratégie Mobile First</h2>
+                <hr class="w-80 border-purple-400 h-1" />
+                <!-- Stratégie Mobile first -->
+                <p class="pt-5"><span class="text-brand-layout">Pour être clair </span>entre le Mobile First // Min et Max (width-height) :</p>
+                <ul class="text-base font-thin">
+                    <li>le préfixe sm: est rigoureusement utilisé pour les requêtes min-width.</li>
+                    <li class="text-red-500">sm (640px) max-width ne correspond pas à "jusqu'à.</li>
+                    <li class="text-green-300">Pour cibler l'intervalle de 640px jusqu'à 1023px, vous devez combiner les préfixes sm: (qui allume le style à 640px) et lg: (qui l'éteint à 1024px).</li>
+                </ul>
+
+                <!-- appliquer la couleur violette sans préfixe pour de 0 à 679, et la couleur jaune avec le préfixe sm: -->
+                <p class="py-5 font-thin">Si vous voulez qu'une instruction s'applique jusqu'à 640px (ou autre) et change après, vous devez la définir par défaut (mobile first), puis la remplacer à partir du point de rupture.</p>
+                <p>exemple : dans div parente : bg-purple-400 sm:bg-yellow-200</p>
+                <p class="pt-5">Test : étirez-moi (agrandir le navigateur)</p>
+                <div class="h-20 m-5 bg-brand-mobileF sm:bg-yellow-200 group">
+                    <p class="text-blue-950 text-base font-thin hidden sm:block">On atteint 680px, donc on passe en jaune > sm:bg-yellow-200</p>
+                </div>
+                <!-- appliquer la couleur violette sans préfixe pour de 0 à 679, et la couleur jaune avec le préfixe sm: -->
+                <div class="h-20 m-5 bg-brand-mobileF md:bg-yellow-200 group">
+                    <p class="text-blue-950 text-base font-thin hidden md:block">On atteint 768px, donc on affiche le paragraphe, dans p > hidden md:block</p>
+                </div>
+                <!-- appliquer la couleur violette sans préfixe pour de 0 à 679, et la couleur jaune avec le préfixe sm: -->
+                <div class="flex flex-col h-auto m-5 bg-brand-mobileF  lg:flex-row">
+                    <p class="p-4 border text-blue-50 text-base font-thin">à partir de 1024px > lg:flex-row</p>
+                    <p class="p-4 border text-blue-50 text-base font-thin">paragraphe 2</p>
+                    <p class="p-4 border text-blue-50 text-base font-thin">paragraphe 3</p>
+                    <p class="p-4 border text-blue-50 text-base font-thin">paragraphe 4</p>
+                </div>
+              </div>
+
+          
+
+    </div><!-- Fermeture du flex col -->
+    </main>
+    <footer class="p-6 mt-6 border border-t-accent">
+        <div class="w-25 p-4 animate-fadeIn">
+            <a href="https://tailwindcss.com/" target="_blank"><img src="../img/tailwindcss-mark.d52e9897.svg" alt="logo Tailwind"></a>
+        </div>
+    </footer>
+</body>
+</html>

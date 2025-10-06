@@ -50,6 +50,20 @@ Vous devez ajouter une classe de positionnement comme top-0 (s'accrocher en haut
                 <h3 class="pt-10 pb-5 text-xl text-gray-50">Nouveauté</h3>
                 <hr class="w-80 bg-brand-darker-layout h-1 border-none" />
                 <p class="py-5 font-body-primary text-base font-light"> Au lieu d'écrire : class="w-40 h-40 => size-40</p>
+                  
+           
+             <!-- 3- display-->
+             <h3 class="py-5 text-xl text-gray-50">Display</h3>
+                 <hr class="w-80 bg-brand-darker-layout h-1 border-none" />
+              <p class="mt-4 p-5 w-auto border-x-1 border-gray-50 inline-block">Mon paragraphe est passé en inline-block donc il se "hug" à son contenu - visible ici avec les bordures</p>
+                <p class="mt-4 p-5 w-auto border-x-1 border-gray-50">Mon paragraphe sans inline-block</p>
+                <h3 class="pt-10 pb-5 text-xl text-gray-50">Préférez w-fit</h3>
+                <hr class="w-80 h-1 border-dashed" />
+                <p> w-fit : Applique width: fit-content;. Ceci est plus sémantique que inline-block et garantit que la boîte se réduit à la taille de son contenu.
+                <p class="mt-4 p-5 border-x-1 border-purple-500 w-fit">w-fit</p>
+                </p>
+            
+
             </div>
             <!-- 2- Démo des containers -->
             <div class="container w-full lg:w-1/3 mx-auto border-1 border-gray-500 rounded-xl p-10">
@@ -59,7 +73,8 @@ Vous devez ajouter une classe de positionnement comme top-0 (s'accrocher en haut
                 <ul class="text-base font-thin list-disc">
                     <li>ex : width 50 : w-50</li>
                     <li class="italic">Rappel : 50 correspond à 200px</li>
-                    <li>centrage automatique : w-auto</li>
+                    <li>w-auto : force l'élément à prendre 100% de la largeur disponible.</li>
+                    <li>mx-auto : si vous voulez centrer un élément horizontalement, vous devez le laisser en w-auto (ou une largeur définie) pour que les marges automatiques puissent fonctionner.</li>
                     <li>moitié du parent : w-1/2, w-1/3 (tiers) etc</li>
                     <li>w-full : 100% de son conteneur parent (width: 100%) </li>
                     <li>w-screen, h-screen : 100% de la largeur/hauteur de l'écran (viewport) (width: 100vw) </li>
@@ -115,15 +130,8 @@ Vous devez ajouter une classe de positionnement comme top-0 (s'accrocher en haut
             </div>
             <!-- 3démo block inline-block inline etc -->
             <div class="container w-full lg:w-1/3 mx-auto border-1 border-gray-500 rounded-xl p-10">
-                <h2 class="py-5 text-3xl text-gray-50">3-Display</h2>
-                <hr class="w-80 bg-brand-darker-layout h-1 border-none" />
-                <!-- flex inline-flex -->
-                <!-- grid inline-grid -->
-                <!-- contents / hidden(none) -->
-                <!-- table / caption / cell / column / row etc -->
-                <p>Lorem ipsum dolor sit amet.</p>
-                <div class="w-10 h-10 bg-blue-400"></div>
-                <h2 class="pt-10 pb-5 text-3xl text-gray-50">4- Box Sizing/Floats/Clear</h2>
+    
+                <h2 class="pt-10 pb-5 text-3xl text-gray-50">3-Box Sizing/Floats/Clear</h2>
                 <hr class="w-80 bg-brand-darker-layout h-1 border-none" />
                 <!-- box-border / content -->
                 <!-- float-right / left / none -->

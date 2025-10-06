@@ -24,6 +24,7 @@ et aux variables ex : (couleurs, espacements, tailles, etc.)
       --color-surface-primary : #1F2729; 
       --color-accent : #64D297;
       --color-accent-hover : #0f4c5c;
+      --color-brand-ligth: #bfd7ff;
       
      /* Palette Menu */ 
      --color-brand-bkg : #FFCB77;
@@ -38,10 +39,18 @@ et aux variables ex : (couleurs, espacements, tailles, etc.)
      --color-brand-darker-flexbox :#014f86 ;
      --color-brand-grid : #1d2d44;
      --color-brand-darker-grid : #101828;
-     --color-brand-custom : #3d348b;
-     --color-brand-darker-custom : #3c096c;
+     --color-brand-min-max : #27187e;
+     --color-brand-darker-min-max : #3c096c;
+     --color-brand-mobileF : #3d348b;
+     --color-brand-darker-mobileF : #6a4c93;
+     --color-brand-advanced : #5465ff;
+     --color-brand-darker-avanced : #5465ff;
      --color-brand-animation : #7678ed;
      --color-brand-darker-animation : #6a4c93;
+
+    /***** @APPLY *******/
+      --color-info-secondary : #7678ed;
+      --color-info-secondary-hover: #3d348b;
 
       /* Dégradé personnalisé à partir du menu */
     --bg-gradient-brand-bkg: linear-gradient(0deg, #FFCB77 0%, #FDBB2D 100%);
@@ -78,27 +87,105 @@ et aux variables ex : (couleurs, espacements, tailles, etc.)
         0%, 70% { opacity: 1; }
         100% { opacity: 0; }
     }
+
 } /* Fin de thèmme */
 
+
+/********* 1er composant (couleur par défaut) ******/
+/* Créer mon 1er btn-primary-test avec couleur tailwind */
+@layer components {
+    .btn-primary {
+        /* On applique toutes les utilitaires pour construire l'apparence */
+        @apply bg-cyan-600 
+               hover:bg-blue-700 
+               text-white 
+               font-bold
+               py-3 
+               px-6 
+               rounded-lg 
+               shadow-md;
+    }
+    .btn-primary-outline {
+        /* On peut aussi créer des variantes ! */
+        @apply border border-cyan-600 text-gray-600 hover:bg-blue-100 py-3 px-6 rounded-lg;
+    }
+     .btn-secondary {
+        @apply bg-blue-950 
+               hover:bg-red-950
+               text-white 
+               font-bold 
+               py-3 
+               px-6 
+               rounded-lg 
+               shadow-md;
+    }
+}
+
+/********* 1er composant (couleur perso) ******/
+/* Créer mon btn-accent avec mes couleurs branding */
+@layer components {
+  .btn-accent {
+    /* Utilise les utilitaires pour la structure */
+    @apply text-white font-bold py-3 px-6 rounded-lg shadow-md transition-colors duration-300; 
+
+    /* Utilise la variable CSS pour la couleur de fond normale */
+    background-color: var(--color-accent);
+  }
+  .btn-accent:hover {
+    /* Utilise la variable CSS pour la couleur de fond au survol */
+    background-color: var(--color-accent-hover);
+  }
+  .btn-info-secondary{
+    @apply text-white font-bold py-3 px-6 rounded-lg shadow-md transition-colors duration-300; 
+     background-color:var(--color-info-secondary);
+  }
+   .btn-info-secondary:hover {
+    /* Utilise la variable CSS pour la couleur de fond au survol */
+    background-color: var(--color-info-secondary-hover);
+  }
+}
+
+/********* 1ère class  ******/
+/********* Class flexbox ******/
+@layer components {
+  .flex-center-all {
+    /* Regroupe les utilitaires de centrage */
+    @apply flex justify-center items-center; 
+  }
+
+  .flex-center-col {
+    /* Un autre exemple : centrage en colonne */
+    @apply flex flex-col justify-center items-center;
+  }
+}
+
+/***********************/
+/* CONTAINER QUERIES **/
+/*********************/
 /* @layer fournit les règles d'application au navigateur.*/
 /* @layer components : Contient vos styles réutilisables. 
 C'est le lieu idéal pour les classes personnalisées complexes*/
 @layer components {
     .myContainerQueries {
         container-type: inline-size;
-        container-name: testTitleAccent test2FireBrick; /* Définition du nom */
-       
-    }
-    .mon-conteneur-test {
-        container-type: inline-size;
-        container-name: testTitleAccent test2FireBrick; /* Définition du nom */
-       
+        container-name: testTitleAccent test2FireBrick; /* Définition du nom */   
     }
 }
-
-/*  Cette règle s'applique UNIQUEMENT quand la largeur du conteneur 'test1' est entre 320px et 767px.  */
+/*  Cette règle s'applique UNIQUEMENT quand la largeur du conteneur 'testTitleAccent' est entre 320px et 767px.  */
 @container testTitleAccent (min-width: 320px) and (max-width: 767px)  {
-     .myContainerQueries h2{ 
+    /* c'est myContainerQueries que je mettrai dans ma div*/
+    /* Déclenche la requête @container et porte le nom (testTitleAccent)*/
+    .myContainerQueries { 
+         background-color : #042a16  ; /* Style appliqué quand on est dans le fenetre min et max */
+         /* Attention : La classe utilitaire du HTML (bg-brand-advanced) gagne la bataille 
+         de la cascade et écrase votre règle conditionnelle background-color: #042a16;.*/
+    }
+    /* sélecteur descendant
+    Cible le style. Indique au navigateur : 
+    "Trouve l'élément h2  qui est enfant (ou petit-enfant) 
+    de .myContainerQueries et applique-lui cette couleur
+    */
+    .myContainerQueries h2{ 
          color : #64D297  ; /* Style appliqué si la requête est vraie */
     }
 }
@@ -110,40 +197,4 @@ C'est le lieu idéal pour les classes personnalisées complexes*/
     .mon-conteneur-test p { 
         font-size: 1.5rem; /* Style appliqué si la requête est vraie */
     }
-}
-
-/* Créer mon 1er btn-primary */
-@layer components {
-    .btn-primary {
-        /* On applique toutes les utilitaires pour construire l'apparence */
-        @apply bg-blue-600 
-               hover:bg-blue-700 
-               text-white 
-               font-bold 
-               py-3 
-               px-6 
-               rounded-lg 
-               shadow-md;
-    }
-
-    .btn-primary-outline {
-        /* On peut aussi créer des variantes ! */
-        @apply border border-blue-600 text-blue-600 hover:bg-blue-100 py-3 px-6 rounded-lg;
-    }
-}
-
-/* Créer mon btn-primary avec mes couleurs branding */
-@layer components {
-  .btn-accent {
-    /* Utilise les utilitaires pour la structure */
-    @apply text-white font-bold py-3 px-6 rounded-lg shadow-md transition-colors duration-300; 
-
-    /* Utilise la variable CSS pour la couleur de fond normale */
-    background-color: var(--color-accent);
-  }
-
-  .btn-accent:hover {
-    /* Utilise la variable CSS pour la couleur de fond au survol */
-    background-color: var(--color-accent-hover);
-  }
 }

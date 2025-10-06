@@ -10,7 +10,7 @@
     <header>
         <a class="absolute flex items-center justify-center w-20 h-20 bg-accent rtop-4 left-4" href="../index.html">Accueil</a>
         <h1 class="pt-20 pb-10 font-medium text-center text-white text-4xl">Personnalisation et RWD</h1>
-        <hr class="m-auto w-80 bg-brand-custom h-1 border-none" />
+        <hr class="m-auto w-80 bg-brand-min-max h-1 border-none" />
     </header>
     <main>
         <!-- à partir de 1024, tu passes en col -->
@@ -18,13 +18,13 @@
             <!-- 1- Démo des min et max -->
             <div class="container mx-auto pb-20 border-1 border-gray-500 rounded-xl p-10">
                 <h2 class="pt-10 pb-5 text-3xl text-gray-50">1-Min et Max Width</h2>
-                <hr class="w-80 bg-brand-custom h-1 border-none" />
+                <hr class="w-80 bg-brand-min-max h-1 border-none" />
                 <p class="mt-5 text-base font-thin">Les propriétés min et max peuvent être utilisées sans le flex, sans le responsive. Mais c'est encore dans ce contexte qu'on les utilise le plus.</p>
                 <h3 class="pt-10 pb-5 text-xl text-gray-50">min|max-width</h3>
                  <hr class="w-80 border-purple-500 h-1 border-dashed" />
                  <div class="mt-5 flex gap-6 md:flex-row flex-col ">
                     <!--min -->
-                    <div class="w-1/2 p-6 border-1 border-bg-brand-custom sm:w-full">
+                    <div class="w-1/2 p-6 border-1 border-bg-brand-min-max sm:w-full">
                         <p class="py-5">Min-Width (à partir de) cette largeur</p>
                         <ul class="text-base font-thin">
                             <li>min-width: 640px => on peut utiliser le préfixe sm:mon élément à cibler </li>
@@ -35,7 +35,7 @@
                         </ul>
                     </div>
                     <!-- max -->
-                    <div class="w-1/2 p-6 border-1 border-bg-brand-custom sm:w-full">
+                    <div class="w-1/2 p-6 border-1 border-bg-brand-min-max sm:w-full">
                         <p class="py-5">Max-Width (jusqu'à) cette largeur</p>
                         <ul class="text-base font-thin">
                             <li>max-width: 640px</li>
@@ -51,56 +51,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- Stratégie Mobile first -->
-                <p class="pt-5"><span class="text-brand-layout">Pour être clair </span>entre le Mobile Forst // Min et Max (width-height) :</p>
-                <ul class="text-base font-thin">
-                    <li>le préfixe sm: est rigoureusement utilisé pour les requêtes min-width.</li>
-                    <li class="text-red-500">sm (640px) max-width ne correspond pas à "jusqu'à.</li>
-                    <li class="text-green-300">Pour cibler l'intervalle de 640px jusqu'à 1023px, vous devez combiner les préfixes sm: (qui allume le style à 640px) et lg: (qui l'éteint à 1024px).</li>
-                </ul>
-                <!-- appliquer la couleur violette sans préfixe pour de 0 à 679, et la couleur jaune avec le préfixe sm: -->
-                <h3 class="pt-10 pb-5 text-xl text-gray-50">Stratégie Mobile First</h3>
-                <hr class="w-80 border-purple-400 h-1 border-dashed" />
-                <p class="py-5 font-thin">Si vous voulez qu'une instruction s'applique jusqu'à 640px (ou autre) et change après, vous devez la définir par défaut (mobile first), puis la remplacer à partir du point de rupture.</p>
-                <p>exemple : dans div parente : bg-purple-400 sm:bg-yellow-200</p>
-                <p class="pt-5">Test : étirez-moi (agrandir le navigateur)</p>
-                <div class="h-20 m-5 bg-brand-custom sm:bg-yellow-200 group">
-                    <p class="text-blue-950 text-base font-thin hidden sm:block">On atteint 680px, donc on passe en jaune > sm:bg-yellow-200</p>
-                </div>
-                <!-- appliquer la couleur violette sans préfixe pour de 0 à 679, et la couleur jaune avec le préfixe sm: -->
-                <div class="h-20 m-5 bg-brand-custom md:bg-yellow-200 group">
-                    <p class="text-blue-950 text-base font-thin hidden md:block">On atteint 768px, donc on affiche le paragraphe, dans p > hidden md:block</p>
-                </div>
-                <!-- appliquer la couleur violette sans préfixe pour de 0 à 679, et la couleur jaune avec le préfixe sm: -->
-                <div class="flex flex-col h-auto m-5 bg-brand-custom  lg:flex-row">
-                    <p class="p-4 border text-blue-50 text-base font-thin">à partir de 1024px > lg:flex-row</p>
-                    <p class="p-4 border text-blue-50 text-base font-thin">paragraphe 2</p>
-                    <p class="p-4 border text-blue-50 text-base font-thin">paragraphe 3</p>
-                    <p class="p-4 border text-blue-50 text-base font-thin">paragraphe 4</p>
-                </div>
-
-
-                <!-- Container queries -->
-                <h3 class="pt-10 pb-5 text-xl text-gray-50">Container Queries via container-name</h3>
-                <hr class="w-80 border-purple-400 h-1 border-dashed" />
-                 <p class="py-5">Avec container-type - name, inline-size, parent, enfant : min et max width <br> </p>
-               
-                <div class="flex gap-4 @container">
-                    <div class="myContainerQueries w-1/2 h-32 bg-purple-500">
-                        <h2 class="p-5 text-sm text-fuchsia-400">Mon h2 va changer de couleur- entre 320 et 767 : en vert</h2>
-                    </div>
-                    <div class="p-5 w-1/3 h-32 bg-purple-600">
-                        <p>Voir l'exemple aussi en page d'accueil avec le h2 de la dernière section</p>
-                    </div>
-                </div>
-                <ul class="pt-5 text-base font-thin list-disc">
-                    <li>Dans input.css ><br>@layer components : Contient vos styles réutilisables</li>
-                    <li>pour définir une classe personnalisée (ex: .mycontainerQueries) <br>
-                         qui inclut les propriétés de Container Query (container-type et container-name)</li>
-                 <li>Le name est ensuite utilisé comme ancre pour cibler l'élément dans la règle @container mise en dessous.</li>
-                 <li>C'est cette classe (.mycontainerQueries, ou .card, etc) qui, une fois dans le HTML, active le nom du container-name pour la règle de requête</li>
-                </ul>
-
+              
                 <h3 class="pt-10 pb-5 text-xl text-gray-50">Encore + d'instructions</h3>
                 <ul class="text-base font-thin list-disc">
                     <li>w-full : 100% de son conteneur parent (width: 100%). Applique explicitement width: 100%;. C'est l'instruction la plus claire pour dire "prends toute la largeur disponible". </li>
@@ -112,23 +63,16 @@
                     <li>min-h-screen : On utilise souvent min-h-screen pour s'assurer que le pied de page (footer) reste en bas de l'écran, même si le contenu de la page est très court.</li>
                 </ul>
             </div>
-   <!-- 
-                    sm	640px	@media (min-width: 640px) { ... }
-                    md	768px	@media (min-width: 768px) { ... }
-                    lg	1024px	@media (min-width: 1024px) { ... }
-                    xl	1280px	@media (min-width: 1280px) { ... }
-                    2xl	1536px	@media (min-width: 1536px) { ... }
-                    -->
 
             <div class="container mx-auto pb-20 border-1 border-gray-500 rounded-xl p-10">
                 <!-- 2- Démo des min et max height -->
                 <h2 class="pt-10 pb-5 text-3xl text-gray-50">2-Min et Max Height</h2>
-                <hr class="w-80 bg-brand-custom h-1 border-none" />
+                <hr class="w-80 bg-brand-min-max h-1 border-none" />
                 <p class="mt-5 text-base font-thin">Les propriétés min et max height sont utilisées pour conserver une hauteur en toutes circonstances. Selon les contextes on peut  limiter une hauteur ou en assurer une minimum.</p>
                 <h3 class="pt-10 pb-5 text-xl text-gray-50">min|max-height</h3>
                 <hr class="w-80 border-purple-500 h-1 border-dashed" />
                 <div class="mt-5 flex gap-6 md:flex-row flex-col ">
-                    <div class="w-1/2 p-6 border-1 border-bg-brand-custom sm:w-full">
+                    <div class="w-1/2 p-6 border-1 border-bg-brand-min-max sm:w-full">
                         <p class="py-5">Min-Height (à partir de) cette hauteur</p>
                         <ul class="text-base font-thin">
                             <li>sm (640px) min-height: 640px;</li>
@@ -139,7 +83,7 @@
                         </ul>
                         <p class="py-4 text-emerald-400">L'objectif de min-height est de garantir qu'une zone reste visible et conserve une certaine taille, même si elle est vide. </p>
                     </div>
-                    <div class="w-1/2 p-6 border-1 border-bg-brand-custom sm:w-full">
+                    <div class="w-1/2 p-6 border-1 border-bg-brand-min-max sm:w-full">
                         <p class="py-5">Max-Height (jusqu'à) cette hauteur</p>
                         <ul class="text-base font-thin">
                             <li>max-height: 640px</li>
@@ -159,7 +103,7 @@
                 </div>
                 <!-- 3- Démo des typos et anim -->
                 <h2 class="pt-10 pb-5 text-3xl text-gray-50">3-Importer - Paramétrer</h2>
-                <hr class="w-80 bg-brand-custom h-1 border-none" />
+                <hr class="w-80 bg-brand-min-max h-1 border-none" />
                 <!-- Custom typo -->
                 <h3 class="pt-10 pb-5 text-xl text-gray-50">Les typos : importer via Gg font</h3>
                 <p class="font-body-primary text-base">font-body-primary : 'Roboto', sans-serif.</p>

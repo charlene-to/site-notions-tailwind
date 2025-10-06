@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced</title>
+    <link rel="stylesheet" href="../src/output.css" />
+</head>
+
+<body class="text-white bg-gray-900">
+    <header>
+        <a class="absolute flex items-center justify-center w-20 h-20 bg-accent rtop-4 left-4" href="../index.html">Accueil</a>
+        <h1 class="pt-20 pb-10 font-medium text-center text-white text-4xl">Advanced</h1>
+        <hr class="m-auto w-80 bg-brand-advanced h-1 border-none" />
+    </header>
+    <main>
+        <!-- à partir de 1024, tu passes en col -->
+        <div class="flex flex-col space-y-4">
+            <!-- 1- @apply et container queries-->
+            <div class="container mx-auto pb-20 border-1 border-gray-500 rounded-xl p-10">
+                <!--@theme -->
+                <h2 class="pt-10 pb-5 text-3xl text-gray-50">@theme</h2>
+                <hr class="w-80 bg-brand-advanced h-1 border-none" />
+                <h3 class="pt-10 pb-5 text-xl text-gray-50">Créer vos variables</h3>
+                <div class="w-3/4 h-auto">
+                    <img src="../img/theme.png" alt="" class="w-full h-full object-cover">
+                </div>
+            </div>
+
+            <!-- Faire ses class-->
+            <div class="container mx-auto pb-20 border-1 border-gray-500 rounded-xl p-10">
+                <h2 class="pt-10 pb-5 text-3xl text-gray-50">@layer component</h2>
+                <hr class="w-80 bg-brand-advanced h-1 border-none" />
+
+                <!--@layer -->
+                <h3 class="pt-10 pb-5 text-xl text-gray-50">Créer votre class pour alléger le style inline</h3>
+                <hr class="w-80 border-brand-advanced h-1 border-dashed" />
+                <hr class="w-80 bg-brand-advanced h-1 border-none" />
+                <div class="my-5 flex justify-center items-center w-full h-16 text-gray-200 border-accent-hover border-1">Mon style inline : flex justify-center items-center</div>
+                <div class="flex-center-all w-full h-16 text-gray-200 border-accent border-1 shadow-accent shadow-lg shadow-accent-500/50">Contenu parfaitement centré via ma class flex-center-all (@pply) </div>
+
+
+                <p class="mt-5 text-base font-thin">Ex : class pour le flexbox</p>
+                <div class="w-3/4 uto h-auto">
+                    <img src="../img/class-advanced.png" alt="" class="w-full h-full object-cover">
+                </div>
+            </div>
+
+            <!--@apply  -->
+          <div class="container mx-auto pb-20 border-1 border-gray-500 rounded-xl p-10">    
+            <h2 class="pt-10 pb-5 text-3xl text-gray-50">@Apply</h2>
+            <hr class="w-80 bg-brand-advanced h-1 border-none" />
+            <p class="mt-5 text-base font-thin">Ce qui se trouve dans @apply doit obligatoirement avoir été défini au préalable dans le bloc @theme (ou dans le thème par défaut de Tailwind).</p>
+            <p class="mt-4 p-5 w-auto border-x-1 border-gray-50 inline-block">Toute classe utilitaire de Tailwind est le reflet d'une valeur définie dans le theme</p>
+            <h3 class="pt-10 pb-5 text-xl text-gray-50">Couleur personnalisée : @theme et @apply</h3>
+            <hr class="w-80 border-brand-advanced h-1 border-dashed" />
+                <!--@theme @apply personnalisé -->
+            <div class="mt-4">
+            
+                <div class="p-4 w-full border-x-1">
+                    <ul class="m-4 text-base font-thin list-disc ">
+                        <li>Je souhaite une couleur personnalisée: accent = #64D297 - vert du theme de ce site</li>
+                        <li>Comme cette couleur ne fait pas partie du thème Tailwind par défaut, il faut la crééer dans @theme</li>
+                        <li>@theme : --color-accent = #64D297.</li>
+                        <li>@apply : peut utiliser en bkg --color-accent dans mon btn-secondary.</li>
+                    </ul>
+                    <div class="btn-accent my-5">Mon btn accent fait avec @apply</div>
+                    <div class="btn-info-secondary my-5">Mon btn secondary fait avec @apply</div>
+                </div>
+            </div>
+            <!--tailwind par défaut  -->
+            <h3 class="pt-10 pb-5 text-xl text-gray-50">Tailwind par défaut : @apply </h3>
+            <hr class="w-80 border-brand-advanced h-1 border-dashed" />
+            <div class="mt-4 w-1/2 p-6 border-1 border-x-1 sm:w-full">
+                <ul class="text-base font-thin">
+                    <li>J'utilise une couleur de base : cyan-600 = #2563EB.</li>
+                    <li>@apply : peut utiliser --color-blue-600 dans une class.</li>
+                </ul>
+                <div class="btn-primary my-5">Mon btn primary fait avec @apply</div>
+                <div class="btn-secondary my-5">Mon btn secondary fait avec un vert de Tailwind</div>
+            </div>
+        </div>
+
+        <!-- extend-->
+        <div class="container mx-auto pb-20 border-1 border-gray-500 rounded-xl p-10">
+            <h2 class="pb-5 text-3xl text-gray-50">Extend</h2>
+            <hr class="w-80 bg-brand-advanced h-1 border-none" />
+            <p class="mt-5 text-base font-thin"> Il est utilisé pour ajouter de nouvelles valeurs (tokens) au Design System de Tailwind sans écraser les utilitaires par défaut.</p>
+            <p class="mt-4 p-5 w-auto border-x-1 border-gray-50">Le compilateur crée de nouvelles classes utilitaires uniques (Ex: bg-brand-bkg, animate-wiggle)</p>
+            <h3 class="pt-10 pb-5 text-xl text-gray-50">Diff entre extend et @ apply</h3>
+            <hr class="w-80 border-brand-advanced h-1 border-dashed" />
+            <div class="mt-4">
+                <!--@theme @apply personnalisé -->
+                <div class="p-4 w-full border-1 border-accent">
+                    <ul class="m-4 text-base font-thin list-disc ">
+                        <li>Je souhaite une couleur personnalisée: blue-primary = #547EB8.</li>
+                        <li>Comme cette couleur ne fait pas partie du thème Tailwind par défaut, il faut la crééer dans @theme</li>
+                        <li>@theme : --color-blue-primary = #547EB8.</li>
+                        <li>@apply : peut utiliser --color-blue-primary dans une class.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Container queries -->
+        <div class="container mx-auto pb-20 border-1 border-gray-500 rounded-xl p-10">
+            <!-- media queries mais sur le container -->
+            <h2 class="pb-5 text-2xl text-gray-50">Container Queries </h2>
+            <hr class="w-80 bg-brand-advanced h-1 border-none" />
+            <p class="p-5 text-base font-thin text-brand-ligth border-brand-light border-1 my-5">Le bloc @container est l'outil qui dit au navigateur d'appliquer
+                un style non pas en fonction de la taille de l'écran entier (@media),
+                mais en fonction de la taille de son parent nommé (voir le h2 en page d'accueil: Concept pour l'architecture des projets Tailwind
+                Du token au css injectée)
+            </p>
+            <div class="flex gap-4 @container">
+                <!-- myContainerQueries h2-->
+                <div class="myContainerQueries w-1/2 h-32 bg-brand-advanced">
+                    <h2 class="p-5 text-sm text-fuchsia-400">Mon h2 va changer de couleur- entre 320 et 767 : en vert</h2>
+                </div>
+                <p class="p-5 text-base font-thin text-brand-ligth  my-5">C'est comme une sorte de media-queries mais sur le container</p>
+            </div>
+
+            <h2 class="mt-10 py-5 text-2xl text-gray-50">@layer components : Container-name</h2>
+            <hr class="w-100 bg-brand-advanced h-1 border-none" />
+            <p class="pt-5">Avec container-type - name, inline-size, parent, enfant : min et max width <br> </p>
+            <ul class="pt-5 text-base font-thin list-disc">
+                <li>Dans input.css ><br>@layer components : Contient vos styles réutilisables</li>
+                <li>pour définir une classe personnalisée (ex: .mycontainerQueries) <br>
+                    qui inclut les propriétés de Container Query (container-type et container-name)</li>
+                <li>Le name est ensuite utilisé comme ancre pour cibler l'élément dans la règle @container mise en dessous.</li>
+                <li>C'est cette classe (.mycontainerQueries, ou .card, etc) qui, une fois dans le HTML, active le nom du container-name pour la règle de requête</li>
+            </ul>
+            <div class="w-auto h-auto">
+                <img src="../img/container-queries.png" alt="Exemple de Container Query" class="w-full h-full object-cover">
+            </div>
+            <p class="py-5 text-red-200"> Attention : Dans notre exemple, la classe utilitaire du HTML (bg-brand-advanced de notre violet custom ci-dessus) gagne la bataille
+                de la cascade et écrase votre règle conditionnelle background-color: #042a16;. Donc, définissez la couleur par défaut avant la règle conditionnelle.</p>
+            <!-- layer components : Container name -->
+        </div>
+
+
+
+
+        <!-- Clarté des rôles de chacun -->
+        <div class="container mx-auto pb-20 border-1 border-gray-500 rounded-xl p-10">
+
+            <h2 class="pb-5 text-2xl text-gray-50">Clarté des rôles de chacun</h2>
+            <hr class="w-80 bg-brand-advanced h-1 border-none" />
+            <p class="py-5">Adistinction conceptuelle entre le "Quoi" (la donnée) et le "Comment" (le conteneur) <br> </p>
+
+            <ul class="pt-5 text-base font-thin list-disc space-y-4">
+                <li>@theme : <span class="uppercase">Créer la donnée</span> <br> Définit les valeurs brutes (tokens), les animations (keyframes), les polices et les dégradés</li>
+                <li>extend : <span class="uppercase">Ajoute sans écraser</span> <br> À l'intérieur de theme : { extend-} Ajoute de nouvelles valeurs au thème sans supprimer la palette par défaut de Tailwind</li>
+                <li>@layer components: <span class="uppercase">créer mes class</span> <br>Dans @layer components : </li>
+                <li>@apply : <span class="uppercase">Assemble et regroupe</span> <br>Dans @layer components : Regroupe plusieurs utilitaires atomiques pour former une classe sémantique réutilisable (Ex: .btn-primary).</li>
+            </ul>
+
+            <ul class="pt-5 text-base font-thin list-circle ml-6">
+                <li class="list-none"><span class="uppercase">Container queries</span></li>
+                <li>@layer components : <span class="uppercase">Contient @apply</span> <br>Dans @layer components : L'endroit où on crée notre .btn-primary par ex ou .flex-center-all</li>
+                <li>container-name : <span class="uppercase">Ancre une requête</span> <br>avec @container : la règle @container ciblera la class que je mettrai dans le html.</li>
+                <li>@container Nom-du-Container-name-donné (min-width: 320px) and (max-width: 767px) : <span class="uppercase">règle du container queries</span> <br>toutes les class appelées dedans d'exécuteront dans la fourchette du min et max</li>
+            </ul>
+            <ul class="pt-5 text-base font-thin list-disc">
+                <li>@layer utilities : <span class="uppercase">Final et Coeur de Tailwind</span> <br>Vous ne devez jamais le remplir ; vous l'utilisez juste en tête de votre CSS pour charger le framework</li>
+               </ul>
+
+        </div>
+
+
+
+
+
+        </div><!-- Fermeture du flex col -->
+    </main>
+    <footer class="p-6 mt-6 border border-t-accent">
+        <div class="w-25 p-4 animate-fadeIn">
+            <a href="https://tailwindcss.com/" target="_blank"><img src="../img/tailwindcss-mark.d52e9897.svg" alt="logo Tailwind"></a>
+        </div>
+    </footer>
+</body>
+
+</html>
