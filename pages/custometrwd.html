@@ -78,6 +78,29 @@
                     <p class="p-4 border text-blue-50 text-base font-thin">paragraphe 3</p>
                     <p class="p-4 border text-blue-50 text-base font-thin">paragraphe 4</p>
                 </div>
+
+
+                <!-- Container queries -->
+                <h3 class="pt-10 pb-5 text-xl text-gray-50">Container Queries via container-name</h3>
+                <hr class="w-80 border-purple-400 h-1 border-dashed" />
+                 <p class="py-5">Avec container-type - name, inline-size, parent, enfant : min et max width <br> </p>
+               
+                <div class="flex gap-4 @container">
+                    <div class="myContainerQueries w-1/2 h-32 bg-purple-500">
+                        <h2 class="p-5 text-sm text-fuchsia-400">Mon h2 va changer de couleur- entre 320 et 767 : en vert</h2>
+                    </div>
+                    <div class="p-5 w-1/3 h-32 bg-purple-600">
+                        <p>Voir l'exemple aussi en page d'accueil avec le h2 de la dernière section</p>
+                    </div>
+                </div>
+                <ul class="pt-5 text-base font-thin list-disc">
+                    <li>Dans input.css ><br>@layer components : Contient vos styles réutilisables</li>
+                    <li>pour définir une classe personnalisée (ex: .mycontainerQueries) <br>
+                         qui inclut les propriétés de Container Query (container-type et container-name)</li>
+                 <li>Le name est ensuite utilisé comme ancre pour cibler l'élément dans la règle @container mise en dessous.</li>
+                 <li>C'est cette classe (.mycontainerQueries, ou .card, etc) qui, une fois dans le HTML, active le nom du container-name pour la règle de requête</li>
+                </ul>
+
                 <h3 class="pt-10 pb-5 text-xl text-gray-50">Encore + d'instructions</h3>
                 <ul class="text-base font-thin list-disc">
                     <li>w-full : 100% de son conteneur parent (width: 100%). Applique explicitement width: 100%;. C'est l'instruction la plus claire pour dire "prends toute la largeur disponible". </li>

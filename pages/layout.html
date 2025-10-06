@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mise en page</title>
     <link rel="stylesheet" href="../src/output.css" />
 </head>
+
 <body class="text-white bg-gray-900">
     <header>
         <a class="absolute flex items-center justify-center w-20 h-20 bg-accent rtop-4 left-4" href="../index.html">Accueil</a>
@@ -64,16 +66,28 @@ Vous devez ajouter une classe de positionnement comme top-0 (s'accrocher en haut
                     <li>min-w-0 : Définit la largeur minimale à 0 (souvent utilisé pour permettre à un élément de se réduire au maximum )</li>
                     <li><a href="custom.html" class="hover:text-accent underline"> Aller dans personnalisation pour en savoir plus </a></li>
                 </ul>
-                <p class="py-5">Les contraintes : jusqu'à une certaine taille</p>
-                <ul class="text-base font-thin">
-                    <li>sm (640px) max-width: 640px;</li>
-                    <li>md (768px) max-width: 768px;</li>
-                    <li>lg (1024px) max-width: 1024px;</li>
-                    <li>xl (1280px) max-width: 1280px;</li>
-                    <li>2xl (1536px) max-width: 1536px;</li>
+
+                <h3 class="pt-10 pb-5 text-xl text-gray-50">Container Queries</h3>
+                <hr class="w-80 pb-5 border-brand-layout h-1 border-dashed" />
+                <p class="py-5">Pour les composants réutilisables : <br> selon le parent (et non le viewport)</p>
+                <div class="flex gap-4 @container">
+                    <div class="w-32 h-32 bg-emerald-500 @md:bg-yellow-400">
+                    </div>
+                    <div class="w-32 h-32 bg-emerald-600 @md:bg-yellow-400">
+                    </div>
+                </div>
+                <ul class="pt-5 text-base font-thin list-disc">
+                    <li>1-Définir le Contexte : @container sur la div parente<br> Cela indique au navigateur : "suit les dimensions de cette boîte."</li>
+                    <li>2-La Requête sur les div enfants : @md:bg-yellow-400 : <br>  Cela signifie : "Si le conteneur parent atteint la taille md (768px), alors applique le style bg-yellow-400.</li>
+                    <li>Voir dans Personnalisation et rwd pour les class et @container type et name</li>
                 </ul>
-                <h2 class="pt-10 pb-5 text-4xl text-gray-50">Overflow</h2>
+                
+
+                <h3 class="pt-10 pb-5 text-xl text-gray-50">Overflow</h3>
+                <hr class="w-80 pb-5 border-brand-layout h-1 border-dashed" />
                 <p>Définir ce qui arrive au contenu lorsque celui-ci est plus grand que son conteneur</p>
+
+
                 <!-- 
                 overflow-auto  : contenu est dans une boîte à défilement automatique, les barres de défilement apparaissent si nécessaire.
                  hidden  : cache axe X et Y
@@ -89,7 +103,9 @@ Vous devez ajouter une classe de positionnement comme top-0 (s'accrocher en haut
                         <div class="w-20 h-20 bg-white hidden"></div>
                     </div>
                 </div>
-                <h2 class="pt-10 pb-5 text-3xl text-gray-50">Z-Index</h2>
+                <h3 class="pt-10 pb-5 text-xl text-gray-50">Z-Index</h3>
+                <hr class="w-80 pb-5 border-brand-layout h-1 border-dashed" />
+
                 <!-- z-0 / 10 / 20 / 30 / auto -->
                 <!-- visible / invisible -->
                 <div class="relative w-32 h-32 bg-blue-400 ">
@@ -155,4 +171,5 @@ Vous devez ajouter une classe de positionnement comme top-0 (s'accrocher en haut
         </div>
     </footer>
 </body>
+
 </html>
