@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mobile First</title>
     <link rel="stylesheet" href="../src/output.css" />
 </head>
+
 <body class="text-white bg-gray-900">
     <header>
         <a class="absolute flex items-center justify-center w-20 h-20 bg-accent rtop-4 left-4" href="../index.html">Accueil</a>
@@ -15,11 +17,18 @@
     <main>
         <!-- à partir de 1024, tu passes en col -->
         <div class="flex gap-4 flex-col min-[1024px]:flex-row">
-           
+
             <!--  @Stratégie mobile first -->
             <div class="container mx-auto pb-20 border-1 border-gray-500 rounded-xl p-10">
-                 <h2 class="pb-5 text-3xl text-gray-50">2-Stratégie Mobile First</h2>
+                <h2 class="pb-5 text-3xl text-gray-50">1-Stratégie Mobile First</h2>
                 <hr class="w-80 border-purple-400 h-1" />
+                <h3 class="pt-10 pb-5 text-xl text-gray-50">Par défaut : en mobile</h3>
+                <hr class="w-80 border-purple-400 h-1 border-dashed" />
+                <ul class="m-5 p-5 text-base font-thin border-1 border-dashed border-accent">
+                    <li class="text-green-300">On définit de base le comportement mobile</li>
+                    <li>Puis on définit avec le préfixe ex : md: à partir de 768px - je veux le bkg jaune</li>
+                    <li></li>
+                </ul>
                 <!-- Stratégie Mobile first -->
                 <p class="pt-5"><span class="text-brand-layout">Pour être clair </span>entre le Mobile First // Min et Max (width-height) :</p>
                 <ul class="text-base font-thin">
@@ -46,11 +55,77 @@
                     <p class="p-4 border text-blue-50 text-base font-thin">paragraphe 3</p>
                     <p class="p-4 border text-blue-50 text-base font-thin">paragraphe 4</p>
                 </div>
-              </div>
+                <h2 class="mt-15 pb-5 text-3xl text-gray-50">Container Queries</h2>
+                <hr class="w-80 border-purple-400 h-1" />
+                <h3 class="pt-10 pb-5 text-xl text-gray-50">Ne pas confondre avec les medias queries - voir cours Advanced</h3>
+                <hr class="w-80 border-purple-400 h-1 border-dashed" />
+                <p class="text-blue-50 text-base font-thin ">La différence est fondamentale et résume l'évolution du design responsive : les Media Queries sont globales (elles regardent l'écran), tandis que les Container Queries sont locales (elles regardent l'élément).</p>
 
-          
+            </div>
 
-    </div><!-- Fermeture du flex col -->
+
+            <!--  medias queries -->
+            <div class="container mx-auto pb-20 border-1 border-gray-500 rounded-xl p-10">
+                <h2 class="pb-5 text-3xl text-gray-50">2-Medias queries</h2>
+                <hr class="w-80 border-purple-400 h-1" />
+                <h3 class="pt-10 pb-5 text-xl text-gray-50">Par défaut : min et max</h3>
+                <hr class="w-80 border-purple-400 h-1 border-dashed" />
+                <ul class="m-5 p-5 text-base font-thin border-1 border-dashed border-accent">
+                    <li class="text-green-300">Compilateur Tailwind nous aide</li>
+                    <li>On définit avec le préfixe min et max nos plages</li>
+                    <li>ex : Appliquer une bordure rouge uniquement aux écrans jusqu'à 700px de large</li>
+                    <li>class="max-[700px]:border-red-500"</li>
+                </ul>
+                <p class="m-5 p-5 text-base font-thin ">Le compolateur s'assure que les règles avec la plus grande min-width sont toujours déclarées en dernier dans le fichier CSS final (output.css).
+
+                    <br><br> Par exemple, le style lg: est déclaré après le style md:. <br><br> Conclusion : Vous n'avez pas à vous soucier de l'ordre manuellement. En utilisant les préfixes de Tailwind (sm:, md:, lg:), vous déclarez simplement vos styles en partant du Mobile, et Tailwind gère la priorité en plaçant les styles des plus grands écrans à la fin du fichier pour vous.
+                </p>
+                <!-- max width -->
+                <p>La Syntaxe Arbitraire de Max-Width</p>
+                <hr class="w-70 border-purple-400 h-1" />
+                <p class="py-5 font-thin">Vous pouvez utiliser les crochets ([]) pour définir une requête max-width manuellement, ce qui est très utile pour des largeurs précises.</p>
+                <p class="pt-5">Test : étirez-moi (agrandir le navigateur)</p>
+                <div class="h-20 mt-5 mb-20 bg-amber-100 border-4 border-amber-100 max-[768px]:border-amber-700">
+                    <p class="text-blue-950 text-base font-thin p-4">taille max-[768px] pour voir ma bordure foncé. après arrêt</p>
+                </div>
+                <!-- min width -->
+                <p>La Syntaxe Arbitraire de Min-Width</p>
+                <hr class="w-70 border-purple-400 h-1" />
+                <p class="py-5 font-thin">Vous pouvez utiliser les crochets ([]) pour définir une requête max-width manuellement, ce qui est très utile pour des largeurs précises.</p>
+                <p class="pt-5">Test : étirez-moi (agrandir le navigateur)</p>
+                <div class="h-20 mt-5 mb-20 bg-amber-100 border-4 border-amber-100 min-[768px]:border-amber-700">
+                    <p class="text-blue-950 text-base font-thin p-4">taille min-[768px] pour voir ma bordure foncé. avant rien</p>
+                </div>
+                <!-- responsive design -->
+                <p>Responsive design</p>
+                <hr class="w-70 border-purple-400 h-1" />
+                <p class="pt-5">L'Intervention du @media : Dès que le navigateur passe sous les 900px, la règle @media (max-width: 900px) s'active et applique le p-10 (énorme padding) et le changement de couleur.</p>
+                <p class="py-5">Redimensionnez la fenêtre du navigateur pour voir le padding et la taille du texte changer au seuil de 900px.</p>
+
+                <div class="mb-20 card-responsive border-2 border-cyan-500 bg-white shadow-xl mx-auto">
+                    <h2 class="font-bold text-accent-hover">Test de la requête @media personnalisée - voir dans input.css -</h2>
+                    <p>Remarquer le changement de padding selon la taille du navigateur</p>
+                </div>
+
+                <!-- min width -->
+                <p>"Last Rule Wins"</p>
+                <hr class="w-70 border-purple-400 h-1" />
+                <p class="py-5 font-thin">
+                    Comme en css pure, l'ordre de déclaration est crucial et le principe de la cascade "Last Rule Wins" (La dernière règle gagne) s'applique toujours.
+                </p>
+                <p>Pour tester un conflit : prouver la règle de la dernière déclaration, vous devez montrer deux déclarations qui se contredisent, avec la même spécificité, et voir laquelle est appliquée.</p>
+                <div>
+                    <p class="font-thin">@media (min-width: 768px) { <br>
+                        .card { background-color: blue; } /* Perdu */ <br>
+
+                        .card { background-color: red; } /* Gagne, car elle est la dernière dans ce bloc */
+                        }</p>
+                </div>
+            </div>
+
+
+
+        </div><!-- Fermeture du flex col -->
     </main>
     <footer class="p-6 mt-6 border border-t-accent">
         <div class="w-25 p-4 animate-fadeIn">
@@ -58,4 +133,5 @@
         </div>
     </footer>
 </body>
+
 </html>
